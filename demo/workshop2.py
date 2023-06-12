@@ -65,14 +65,21 @@ if dataframe is not None:
                 max_selections=2)
             
     fig2, ax2 = plt.subplots()
-    
-    match chartType:
-        case 'ligne':
-            ax2.plot(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
-        case 'barre':
-            ax2.bar(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
-        case 'nuage de points':
-            ax2.scatter(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
+
+    if chartType == 'ligne':
+        ax2.plot(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
+    elif chartType == 'barre':
+        ax2.bar(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
+    else:
+        ax2.scatter(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
+
+    # match chartType:
+    #     case 'ligne':
+    #         ax2.plot(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
+    #     case 'barre':
+    #         ax2.bar(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
+    #     case 'nuage de points':
+    #         ax2.scatter(dataframe[optionsLigne[0]].to_list(), dataframe[optionsLigne[1]].to_list())
 
     ax2.set_xlabel(optionsLigne[0])
     ax2.set_ylabel(optionsLigne[1])
