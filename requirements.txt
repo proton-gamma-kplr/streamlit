@@ -1,1 +1,6 @@
-python3 -m pip install matplotlib
+matplotlib
+pandas
+numpy
+plotly
+scipy
+pydeck
